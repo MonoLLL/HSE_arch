@@ -155,3 +155,8 @@
                     pm.response.to.have.status(204);
                 });
 ![GitHub Image](img/Удаление_второго_обращения.jpg) 
+
+
+
+
+<!-- Pull request for Lab_4 -->
