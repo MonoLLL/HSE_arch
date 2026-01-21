@@ -1,4 +1,4 @@
-# Лабораторная работа №1  
+# Лабораторная работа №4  
 ## Проектирование REST API 
 ## Цель работы
 Получить опыт проектирования программного интерфейса.
@@ -96,7 +96,7 @@
                   pm.test("Response is array", function () {
                     pm.expect(pm.response.json()).to.be.an("array");
                 });
-- 
+![GitHub Image](img/Получить_все.jpg)
 ### POST ('/api/tickets') - Создать обращение
 * **Body** 
 {
@@ -115,7 +115,7 @@
                     pm.expect(t).to.have.property("status", "open");
                     pm.environment.set("ticketId", t.id);
                 });
--
+![GitHub Image](img/Создание.jpg)
 
 ### GET ('/api/tickets/{id}') - Получим последнее созданное по id
 - Request - http://localhost:8080/api/tickets/{{id}}
@@ -126,7 +126,7 @@
                     const t = pm.response.json();
                     pm.expect(t.id).to.eql(Number(pm.environment.get("ticketId")));
                 });
-- 
+![GitHub Image](img/Получаем_созданное_по_id.jpg)
 
 ### PUT ('/api/tickets/{id}') - Обновить Статус
 * **Body** 
@@ -138,7 +138,7 @@
                 pm.test("Status updated to in_progress", function () {
                     pm.expect(pm.response.json().status).to.eql("in_progress");
                 });
-- 
+![GitHub Image](img/Обновление_статуса.jpg)
 
 ### GET ('/api/students/{studentId}/tickets') - Получим обращение по id студенты
 - Request - http://localhost:8080/api/students/99/tickets
@@ -148,11 +148,10 @@
                 pm.test("Response is array", function () {
                     pm.expect(pm.response.json()).to.be.an("array");
                 });
-- 
-
+![GitHub Image](img/Обращение_по_id_студента.jpg)
 ### DELETE ('/api/tickets/{id}') - Удалим обращение по id
 - Request - http://localhost:8080/api/tickets/{{Id}}
 - Post-response - m.test("Status code is 204", function () {
                     pm.response.to.have.status(204);
                 });
-- 
+![GitHub Image](img/Удаление_второго_обращения.jpg) 
